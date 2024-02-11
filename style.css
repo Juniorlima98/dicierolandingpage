@@ -1,4 +1,13 @@
+.container{
+	margin: auto;
+	width: 100% !important;
+	max-width: 2000px !important;
+}
+
+
+
 .menu-bar {
+	margin-top: 10px !important;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -6,7 +15,7 @@
     color: white;
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 50px;
 }
@@ -15,26 +24,24 @@
     cursor: pointer;
 }
 
-
+section:last-child {
+    flex-grow: 1;
+}
 
 body {
     background: url(assets/img/background.jpg) center/cover no-repeat !important;
-    height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
+    align-items: center; /* Adicionei para centralizar o conteúdo verticalmente */
     width: 100% !important;
-  }
+}
   
 
-
-
-
   .menu-bar {
+	margin-top: 10px;
     border-radius: 25px;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    height: auto; /* Alteração aqui */
     display: inline-flex;
     background-color: rgba(0, 0, 0, 0.1);
     -webkit-backdrop-filter: blur(10px);
@@ -42,7 +49,21 @@ body {
     align-items: center;
     padding: 0 10px;
     margin: 50px 0 0 0;
-  }
+    min-height: 50px; /* Adição aqui */
+	width: 100%;
+	position: fixed;
+    top: 0;
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    z-index: 1000;
+	transition: background-color 0.3s; /* Adiciona uma transição suave na mudança de cor */
+}
+
+.menu-bar.scrolled {
+	background-color: black !important;
+	backdrop-filter: none; /* Remove o efeito de desfoque quando a cor é preta */
+}
+
   .menu-bar li {
     list-style: none;
     color: white;
@@ -76,12 +97,6 @@ body {
 
 
 
-
-body {
-	margin: 0;
-	padding: 0;
-	background: #0a69ed; 
-}
 .carousel{
     height: 900px; 
     perspective: 250px;    
@@ -131,193 +146,36 @@ body {
 
 section {
   width: 100%;
-  display: inline-block;
-  background: #333;
-  height: 50vh;
   text-align: center;
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: underline;
 }
 
-.footer-distributed{
-	background: #666;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
-	width: 100%;
-	text-align: left;
-	font: bold 16px sans-serif;
-	padding: 55px 50px;
+
+.footer-columns {
+    justify-content: space-between;
+	background-color: #000;
+	color: white;
+	padding-top: 3rem;
+	display: flex;
+    align-items: flex-start; /* Alinha os itens ao topo */
 }
 
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right{
-	display: inline-block;
-	vertical-align: top;
+.footer-column {
+    flex: 1;
+	margin-top: rem;
+    margin-right: 1rem; /* Adiciona espaçamento entre as colunas */
 }
 
-/* Footer left */
-
-.footer-distributed .footer-left{
-	width: 40%;
+.contact-info {
+    display: flex;
+    align-items: center;
 }
 
-/* The company logo */
-
-.footer-distributed h3{
-	color:  #ffffff;
-	font: normal 36px 'Open Sans', cursive;
-	margin: 0;
+.footer-icons {
+    display: flex;
+    margin-top: 4rem;
+	margin-right: 1rem;
 }
 
-.footer-distributed h3 span{
-	color:  lightseagreen;
-}
-
-/* Footer links */
-
-.footer-distributed .footer-links{
-	color:  #ffffff;
-	margin: 20px 0 12px;
-	padding: 0;
-}
-
-.footer-distributed .footer-links a{
-	display:inline-block;
-	line-height: 1.8;
-  font-weight:400;
-	text-decoration: none;
-	color:  inherit;
-}
-
-.footer-distributed .footer-company-name{
-	color:  #222;
-	font-size: 14px;
-	font-weight: normal;
-	margin: 0;
-}
-
-/* Footer Center */
-
-.footer-distributed .footer-center{
-	width: 35%;
-}
-
-.footer-distributed .footer-center i{
-	background-color:  #33383b;
-	color: #ffffff;
-	font-size: 25px;
-	width: 38px;
-	height: 38px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 42px;
-	margin: 10px 15px;
-	vertical-align: middle;
-}
-
-.footer-distributed .footer-center i.fa-envelope{
-	font-size: 17px;
-	line-height: 38px;
-}
-
-.footer-distributed .footer-center p{
-	display: inline-block;
-	color: #ffffff;
-  font-weight:400;
-	vertical-align: middle;
-	margin:0;
-}
-
-.footer-distributed .footer-center p span{
-	display:block;
-	font-weight: normal;
-	font-size:14px;
-	line-height:2;
-}
-
-.footer-distributed .footer-center p a{
-	color:  lightseagreen;
-	text-decoration: none;;
-}
-
-.footer-distributed .footer-links a:before {
-  content: "|";
-  font-weight:300;
-  font-size: 20px;
-  left: 0;
-  color: #fff;
-  display: inline-block;
-  padding-right: 5px;
-}
-
-.footer-distributed .footer-links .link-1:before {
-  content: none;
-}
-
-/* Footer Right */
-
-.footer-distributed .footer-right{
-	width: 20%;
-}
-
-.footer-distributed .footer-company-about{
-	line-height: 20px;
-	color:  #92999f;
-	font-size: 13px;
-	font-weight: normal;
-	margin: 0;
-}
-
-.footer-distributed .footer-company-about span{
-	display: block;
-	color:  #ffffff;
-	font-size: 14px;
-	font-weight: bold;
-	margin-bottom: 20px;
-}
-
-.footer-distributed .footer-icons{
-	margin-top: 25px;
-}
-
-.footer-distributed .footer-icons a{
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-	background-color:  #33383b;
-	border-radius: 2px;
-
-	font-size: 20px;
-	color: #ffffff;
-	text-align: center;
-	line-height: 35px;
-
-	margin-right: 3px;
-	margin-bottom: 5px;
-}
-
-/* If you don't want the footer to be responsive, remove these media queries */
-
-@media (max-width: 880px) {
-
-	.footer-distributed{
-		font: bold 14px sans-serif;
-	}
-
-	.footer-distributed .footer-left,
-	.footer-distributed .footer-center,
-	.footer-distributed .footer-right{
-		display: block;
-		width: 100%;
-		margin-bottom: 40px;
-		text-align: center;
-	}
-
-	.footer-distributed .footer-center i{
-		margin-left: 0;
-	}
-
+.footer-icons a {
+    margin-right: 1rem;
 }
